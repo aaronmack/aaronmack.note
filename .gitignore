@@ -1,0 +1,13 @@
+*.gem
+.bundle
+.sass-cache
+_site
+Gemfile.lock
+
+.jekyll-cache
+
+# gitbook
+_book
+
+# JetBrains
+.idea

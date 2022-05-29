@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>docsify</title>
+	<link rel="icon" href="_images/SeaSnailLogo.png">
+	<meta name="google-site-verification" content="6t0LoIeFksrjF4c9sqUEsVXiQNxLp2hgoqo0KryT-sE" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="keywords" content="doc,docs,documentation,gitbook,creator,generator,github,jekyll,github-pages">
+	<meta name="description" content="A magical documentation generator.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css" title="vue">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/dark.css" title="dark" disabled>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/buble.css" title="buble" disabled>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/pure.css" title="pure" disabled>
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.1/index.min.js"></script>
+  
+	<style>
+		nav.app-nav li ul {
+			min-width: 130px;
+		}
+
+    #carbonads {
+			box-shadow: none !important;
+      width: auto !important;
+		}
+	</style>
+</head>
+
+<body>
+
+  <!-- markmap is based on d3, so must load those files first. -->
+  <script src="//unpkg.com/d3@3/d3.min.js"></script>
+  <script src="//unpkg.com/markmap@0.6.0/lib/d3-flextree.js"></script>
+  <script src="//unpkg.com/markmap@0.6.0/lib/view.mindmap.js"></script>
+
+	<div id="app">Loading ...</div>
+	<script>
+		window.$docsify = {
+
+      mindmap: {
+        preset: 'colorful', // or default
+        linkShape: 'diagonal' // or bracket
+      },
+
+      tabs: {
+        persist    : true,      // default
+        sync       : true,      // default
+        theme      : 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+
+      charty: {
+        "theme": "#EE5599",
+        "mode":  "dark",
+        "debug": false
+      },
+
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+        '/.*/_navbar.md': '/_navbar.md',
+
+        // .*? for unsupported language can be show follow .md files
+        '/quickstart': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/quickstart.md',
+        '/more-pages': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/more-pages.md',
+        '/custom-navbar': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/custom-navbar.md',
+        '/cover': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/cover.md',
+        '/configuration': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/configuration.md',
+        '/themes': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/themes.md',
+        '/plugins': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/plugins.md',
+        '/write-a-plugin': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/write-a-plugin.md',
+        '/markdown': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/markdown.md',
+        '/language-highlight': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/language-highlight.md',
+        '/deploy': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/deploy.md',
+        '/helpers': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/helpers.md',
+        '/cdn': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/cdn.md',
+        '/pwa': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/pwa.md',
+        '/ssr': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/ssr.md',
+        '/embed-files': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/docs/embed-files.md',
+        '/awesome': 'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
+        '/changelog': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG.md',
+
+        '/zh-cn/quickstart': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/quickstart.md',
+        '/zh-cn/more-pages': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/more-pages.md',
+        '/zh-cn/custom-navbar': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/custom-navbar.md',
+        '/zh-cn/cover': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/cover.md',
+        '/zh-cn/configuration': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/configuration.md',
+        '/zh-cn/themes': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/themes.md',
+        '/zh-cn/plugins': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/plugins.md',
+        '/zh-cn/write-a-plugin': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/write-a-plugin.md',
+        '/zh-cn/markdown': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/markdown.md',
+        '/zh-cn/language-highlight': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/language-highlight.md',
+        '/zh-cn/deploy': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/deploy.md',
+        '/zh-cn/helpers': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/helpers.md',
+        '/zh-cn/cdn': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/cdn.md',
+        '/zh-cn/pwa': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/pwa.md',
+        '/zh-cn/ssr': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/ssr.md',
+        '/zh-cn/embed-files': 'https://raw.githubusercontent.com/docsifyjs/docs-zh/master/embed-files.md',
+        '/zh-cn/awesome': 'https://raw.githubusercontent.com/docsifyjs/awesome-docsify/master/README.md',
+        '/zh-cn/changelog': 'https://raw.githubusercontent.com/docsifyjs/docsify/master/CHANGELOG.md',
+        
+        '/life/demo-learning-project-README': 'https://raw.githubusercontent.com/aaronmack/demo-learning-project/master/README.md',
+        '/life/demo-unreal-indie-README': 'https://raw.githubusercontent.com/aaronmack/demo-unreal-indie/master/README.md',
+        '/life/demo-unreal-SHOWCASE': 'https://raw.githubusercontent.com/aaronmack/demo-unreal/master/SHOWCASE.md',
+      
+        '/_media/code/VulkanCMakeEnv': 'https://raw.githubusercontent.com/aaronmack/dev-for-store-with-draw-io/master/CodeFragment.md'
+      },
+
+      logo: '../_images/Baymax.jpg',
+      auto2top: true,
+      coverpage: true,
+      executeScript: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      mergeNavbar: true,
+      maxLevel: 8,
+      subMaxLevel: 8,
+      sidebarDisplayLevel: 1, // set sidebar display level
+      ga: 'UA-178633020-1',
+      matomo: { 
+        host: '//matomo.thunderwave.de',
+        id: 6
+      },
+      name: 'ANIR',
+      //repo: 'https://github.com/aaronmack',
+
+      disqus: 'research-3',
+
+      search: {
+        maxAge: 600, // Expiration time, the default one day
+        noData: {
+          '/de-de/': 'Keine Ergebnisse!',
+          '/zh-cn/': '没有结果!',
+          '/': 'No results!'
+        },
+        depth: 8,
+        hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+        paths: 'auto',
+        placeholder: {
+          '/de-de/': 'Suche',
+          '/zh-cn/': '搜索',
+          '/': 'Type to search'
+        }
+      },
+      plugins: [
+        // DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/master/, '/blob/master')
+            } else if (/jsdelivr\.net/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('cdn.jsdelivr.net/gh', 'github.com')
+                .replace('@master', '/blob/master')
+            } else {
+              url = 'https://github.com/aaronmack/aaronmack.github.io/tree/master/docs/' + vm.route.file
+            }
+            var editHtml = '[:memo: Edit Document](' + url + ')\n'
+            return editHtml
+              + html
+              + '\n\n----\n\n'
+              + '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
+          })
+        }
+      ]
+    }
+  </script>
+  
+  <!-- CDN files for docsify-katex -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/matomo.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-nginx.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
+
+  <!-- plugins -->
+  <script src="//unpkg.com/docsify-mindmap/dist/docsify-mindmap.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script> -->
+  <script src="./_media/js/docsify-plugin-scroll.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/@markbattistella/docsify-charty@latest"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@markbattistella/docsify-charty@latest/dist/docsify-charty.min.css">
+	<!-- docsify: tabs -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+
+  <script src="//unpkg.com/mermaid/dist/mermaid.js"></script>
+  <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"> 
+  <script>mermaid.initialize({ startOnLoad: true });</script>
+  
+  <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/disqus.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  </body>
+
+</html>
