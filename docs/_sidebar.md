@@ -161,6 +161,8 @@
       - [Contents](/life/exam/soft_test/InformationSystemProjectManager/contents)
       - [Materials](/life/exam/soft_test/InformationSystemProjectManager/materials)
       - [Exercises](/life/exam/soft_test/InformationSystemProjectManager/exercises.md)
+
+<!-- 
   - [Book Digest](/life/book_digest.md)
     - [To be classified 待分类](/life/reading/to_be_classified.md)
     * **Complexity 复杂性科学**
@@ -228,6 +230,8 @@
       * [控制论](/life/reading/system_theory#控制论)
     * **Frame 框架**
       * [经济学](/life/reading/frame#经济学)
+--> 
+
   - [Design](/life/design.md)
   - [Physics](/life/physics.md)
   - [Knowledge structure](/life/knowledge_structure.md)
